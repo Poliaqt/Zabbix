@@ -47,17 +47,17 @@ services:
     networks:
       - internal
 
-  # proxy:
-  #   image: nginx:latest
-  #   container_name: proxy
-  #   volumes:
-  #     - ./nginx.conf:/etc/nginx/nginx.conf
-  #   ports:
-  #     - "80:80"
-  #   depends_on:
-  #     - zabbix-web
-  #   networks:
-  #     - external
+  proxy:
+    image: nginx:latest
+    container_name: proxy
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - "80:80"
+    depends_on:
+      - zabbix-web
+    networks:
+      - external
 
 networks:
   internal:
