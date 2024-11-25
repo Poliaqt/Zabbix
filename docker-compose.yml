@@ -35,17 +35,17 @@ services:
       - internal
       - external
 
-  postgres:
-    image: postgres:latest
-    container_name: postgres
-    environment:
-      POSTGRES_USER: zabbix
-      POSTGRES_PASSWORD: zabbixpass
-      POSTGRES_DB: zabbix
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - internal
+  # postgres:
+  #   image: postgres:latest
+  #   container_name: postgres
+  #   environment:
+  #     POSTGRES_USER: zabbix
+  #     POSTGRES_PASSWORD: zabbixpass
+  #     POSTGRES_DB: zabbix
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   networks:
+  #     - internal
 
   proxy:
     image: nginx:latest
